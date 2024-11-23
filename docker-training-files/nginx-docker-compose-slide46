@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-docker-compose
+    ports:
+      - "9005:80"  # Maps port 9005 on your host to port 80 in the container
+    volumes:
+      - /mnt/c/html:/usr/share/nginx/html  # Mount local directory to Nginx HTML directory
+    environment:
+      - KAFKA_SERVER=130.0.1.1  # Environment variable
+    restart: always  # Ensure the container restarts after server restart
+
