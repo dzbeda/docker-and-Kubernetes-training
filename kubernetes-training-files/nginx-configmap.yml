@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configmap
+data:
+  KAFKA_MASTER: "130.1.1.1"
+  index.html: |
+    <html>
+    <head><title>Welcome to Nginx</title></head>
+    <body>
+    <h1>Not Again :-( </h1>
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-configmap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        env:
+        - name: KAFKA_MASTER
+          valueFrom:
+            configMapKeyRef:
+              name: nginx-configmap
+              key: KAFKA_MASTER
+        volumeMounts:
+        - name: index-html
+          mountPath: /usr/share/nginx/html
+      volumes:
+       - name: index-html
+         configMap:
+           name: nginx-configmap

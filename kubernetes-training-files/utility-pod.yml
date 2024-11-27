@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: utility-pod
+spec:
+  containers:
+  - name: utility-container
+    image: ubuntu:latest
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/bash", "-c", "apt-get update && apt-get install -y wget curl iputils-ping && sleep 10800"]
+    tty: true
