@@ -1,3 +1,5 @@
+![Evolution Image](./Evolution.png)
+
 # Docker and Kubernetes Training
 
 Welcome to the **Docker and Kubernetes Training** repository! This repository contains a presentation covering Docker and Kubernetes concepts, along with practice sections to help you gain hands-on experience. The required files for the practice sections are also included in this repository.
