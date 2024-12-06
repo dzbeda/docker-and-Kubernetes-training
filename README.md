@@ -1,4 +1,4 @@
-![Evolution Image](./Evolution.png)
+<img src="./Evolution.png" alt="Evolution Image" width="500" height="300">
 
 # Docker and Kubernetes Training
 
